@@ -70,7 +70,6 @@ ggplot(chicks, aes(x = Time, y = weight)) +
 facet_wrap(~Diet, ncol = 4)
 facet_wrap(~Diet, nrow = 2)
 
-
 #Facet wrap functin splits the diet into different panes, and ncol splits into different columns,specifies the number of columns.
 #nrow specify numberof rows.
 
