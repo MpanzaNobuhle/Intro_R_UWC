@@ -26,7 +26,8 @@ ggplot(data = cars, aes(x=speed, y=dist))+
   geom_boxplot(aes(group=speed))+
   labs(x="speed", y="distance")
 #Conclusion of the above hypothesis: At lower speed the distance travelled is shorter and starts to increase when the speed increases.
-
+laminaria <- read_csv("data/laminaria.csv")
+View(laminaria)
 #Calculating the mean of speed for cars.
 cars %>% 
   summarise(aveg_speed = mean(speed))
