@@ -28,3 +28,6 @@ lam %>%
   filter(stipe_mass ==max(stipe_mass)) %>% 
   select(site, region, stipe_length)
 
+# [A.A]
+# Nice, neat script
+# Script runs

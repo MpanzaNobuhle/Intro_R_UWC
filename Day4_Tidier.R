@@ -120,7 +120,10 @@ SACTN %>%
             min_temp = min(temp),
             max_temp = max(temp))
 
-
+# [A.A]
+# Good comments throughout the script
+# PLay with the different funtions, this only improves your understanding
+# Neat script, shows a somewhat good understandin
   
 
 

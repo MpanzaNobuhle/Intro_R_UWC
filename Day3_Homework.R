@@ -27,3 +27,9 @@ save(laminaria, file = "laminaria.Rdata")
 
 #Pushing
 # Go to git, then mark the files you want to push, then click commit, then on the box that pops up write your commit message. After that click commit,box pops close it then push.
+
+
+# NIce
+# Several pdf documents may explain this better
+# neat
+# Well written
