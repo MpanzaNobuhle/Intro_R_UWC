@@ -69,7 +69,7 @@ Orange%>%
 #Part 3:Using the chickwts data to draw graphs and interpret dataset.
 #Hypothesis: The chicks fed with sunflower gained more weight than the rest of the chicks fed other feed.
 chick3 <-  chickwts
-chick3 datasets:: chickwts
+chick3 <- datasets:: chickwts
 ??chickwts
 
 ggplot(data = chickwts, aes(x = feed, y = weight)) +
@@ -102,6 +102,11 @@ chickwts %>%
 #A total of 6 graphs have been plotted.
 #The means in all the datasets have been calculated.
 
-
+# [A.A]
+# Answers all the questions
+# Creates valid hypothesis
+# Good graphs, different graphs could be used but this will be done in biostats
+# neat script
+# Many errors fom line 71???? Not sure what is happening here, fix it and push it back to github
 
 

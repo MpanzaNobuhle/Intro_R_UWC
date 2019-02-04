@@ -55,3 +55,9 @@ filter(site %in% selected_sites) %>%
 #If we have one site,we run the ff code.
 SACTN <- 
 Filter(site == "Port Nolloth")
+
+# [A.A]
+# Script runs
+# Neat script
+# Sufficient comments
+# Nicely done
