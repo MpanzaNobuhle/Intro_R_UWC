@@ -118,5 +118,10 @@ final_map
 
 #Refer to this file when doing my project and also consult Amieroh, shes cool and willing to help only if im willing to learn.
 
+# [A.A]
+# Nice and neat script
+# Good commenting throughout the script
+# Try new things, this will only increase you marks and help with yout understading
+# Script runs
 
 

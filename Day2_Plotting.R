@@ -127,4 +127,7 @@ ggplot(data = urine, aes(x = osmo, y = ph)) +
   geom_point(aes(colour = as.factor(r)))
 #as. factor means 0 or 1.
 
-
+# [A.A]
+# Neat script, well organised
+# Adding comments will only improve your understading
+# Lack of comments through out the script
