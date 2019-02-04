@@ -8,7 +8,6 @@ library(tidyverse)
 
 
 #Loading Data
-#For .RData file just use load() and for .csv file use read_csv.()
 #Explore your data before running any codes just so you can have a clear picture of what youre working with.
 
 load("data/SACTN_mangled.RData")
