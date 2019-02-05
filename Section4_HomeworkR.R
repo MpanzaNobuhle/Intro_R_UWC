@@ -37,7 +37,7 @@ Rocky %>%
 
 #Visualizations not done in the R intro workshop
 
-#Using geom_jitter then adding geom_line to connect he jitter points.
+#Using geom_jitter then adding geom_line to connect he jitter points,then able to read the pattern of the data.
 
 
 Rocky %>% 
@@ -51,6 +51,7 @@ ggplot(aes(x= height, y= weight))+
   geom_bin2d()+
     geom_smooth(method = "lm")
 
+#using crossbar
 Women1 %>% 
   ggplot(aes(x= height, y= weight))+
   geom_crossbar(ymin=115, ymax=155)

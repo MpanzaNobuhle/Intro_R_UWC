@@ -77,6 +77,7 @@ Boxpl
 #conclusion: The distribution of epiphyte length by site showed that in Batsasa Rock the epiphyte length was greater than that of the Boulders Beach.
 
 # Graph C Hypothesis 3: The primary blade width of both sites does not vary among sites. 
+#plotting a bar graph we use geom_bar
 
 BarGr <- ggplot(data=ecklonia,aes(x= primary_blade_width)) +
   geom_bar(aes(fill= site), position = "dodge") +

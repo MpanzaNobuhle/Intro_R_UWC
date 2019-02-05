@@ -24,7 +24,7 @@ SACTN <- read.csv("data/SACTN_day_1.csv")
 
 
 SACTN_tidy <- SACTN %>%
-  separate(col = index, into = c("site", "src"), sep = "/ ") +
+  separate(col = index, into = c("site", "src"), sep = "/ ") 
   
 
 #First remove/delete the untidy dataset/original dataset.
