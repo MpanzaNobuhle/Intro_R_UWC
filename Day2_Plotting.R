@@ -15,6 +15,8 @@ ggplot(data = chicks, aes(x = Time, y = weight)) +
   geom_point() +
   geom_line(aes(group = Chick))
 
+ggfggfggf
+
 #The function above was to plot a graph using the chick data with time on the x-axis and weight on the y-axis.
 #ggplot is a function within tidyverse package,aes means astetics,controls everything
 #geom_point means make scatterplot and for line and histogram you say geom_line or geom_histo.
