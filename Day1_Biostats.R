@@ -1,7 +1,7 @@
 #09/04/2019
 #Nobuhle Mpanza
 #Day 1 Biostats
-#Time -08:30-12:00 Session 1
+#Time -08:30-12:00 Session 1/Morning
 
 #Basic_stats folder created within the Intro_R_UWC
 

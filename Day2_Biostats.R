@@ -1,4 +1,4 @@
-#Day2 Biostats
+#Day2 Biostats first session
 #Nobuhle Mpanza
 #15 April 2019
 #Chapter 5 
