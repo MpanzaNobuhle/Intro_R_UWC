@@ -2,7 +2,7 @@
 #Nobuhle Mpanza
 #15 April 2019
 #Chapter 5 
-
+  
 #loading libraries
 library(tidyverse)
 library(fitdistrplus)
@@ -36,12 +36,12 @@ sd(y_class)
 median(y_class)
 hist(y_class) #draw histogram.
 
-#Then plot the three graphs here usinng our the class generated data.
-#par(mfrow = c(2, 2)) 
-#plot(x = c(1:length(y_class), y = y_class) 
-#hist(y_class) 
-#descdist(y, 
-         #discrete = FALSE, boot = 100)
+#Then plot the three graphs here using our class generated data.
+par(mfrow = c(2, 2)) 
+plot(x = c(1:length(y_class), y = y_class)) 
+hist(y_class) 
+descdist(y, 
+  discrete = FALSE, boot = 100)
 
 
 #rnorm means random numbers
@@ -53,11 +53,11 @@ hist(y2)
 descdist(y2,discrete = FALSE)
 
 #Example from notes
-#y <-rnorm(n = 200, m = 13, sd = 2) 
-#par(mfrow = c(2, 2))
-#hist(y, main = "Histogram of observed data") 
-#plot(density(y), main = "Density estimate of data")
-  # plot(ecdf(y),
-     # z.norm <- (y - mean(y)) / sd(y) 
-     # qqnorm(z.norm) main = "Empirical cumulative distribution function")
-   #abline(0, 1)
+y <-rnorm(n = 200, m = 13, sd = 2) 
+par(mfrow = c(2, 2))
+hist(y, main = "Histogram of observed data") 
+plot(density(y), main = "Density estimate of data")
+   plot(ecdf(y),
+    z.norm <- (y - mean(y)) / sd(y))
+     qqnorm(z.norm) main = "Empirical cumulative distribution function"))
+   abline(0, 1)
