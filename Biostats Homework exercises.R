@@ -32,31 +32,63 @@ hist(ownNormal, main = "Normal DIstribution") #draw histogram to visualise my ow
 t.test(ownNormal) #t test on my OwnData
 
 
+#Using probability data
+bees <- matrix(c(70,85,50,35), ncol=2)
+colnames(bees) <- c("yes", "no")
+rownames(bees) <-c("managed", "wild")
+
+#null hyp- Probability of mating in both wild and managed bees is not different
+#Alt hyp- There is a higher probability of mating in managed bees than wild bees
+prop.test(bees)
+#pvalue>0.05
 
 #CHAPTER7
-#7.4: Construct suitable null and alternative hypotheses,test your hypothesis using an ANOVA.
 
-#loading built in data
-teeth <- datasets::ToothGrowth
+#Exercise 7.4.1
+feed_A <- c(60.8, 57.0, 65.0, 58.6, 61.7)
+feed_B <- c(68.7,67.7, 74.0, 66.3, 69.8)
+feed_C <- c(102.6, 102.1, 100.2, 96.5)
+feed_D <- c(87.9, 84.2, 83.1, 85.7, 90.3)
 
-#Constructing hypothesis
-#Null-There is no difference in tooth length with respect to the dose levels of vitamin C.
-#Alternative- An increase in dose level will cause an increase in teeth length.
+bacon <- as.tibble(data.frame(
+  feed=c(
+  rep("Feed 1", length(feed_A)),
+  rep("Feed 2", length(feed_B)),
+  rep("Feed 3", length(feed_C)),
+  rep("Feed 4", length(feed_D)),
+  mass=c(feed_A, feed_B, feed_C, feed_D))))
+  
+  #null hyp-feed type has no effect on pig mass.
+  #alt hyp-feed type has an effect on pig mass.
+  
+  mass<- compare_means(mass~feed, data=bacon, method="t.test")
+  bacon.aov1 <- aov(mass~feed, data=bacon)
+  summary(bacon.aov1)
+  
+  #7.4.2: Construct suitable null and alternative hypotheses,test your hypothesis using an ANOVA.
+  
+  #loading built in data
+  teeth <- datasets::ToothGrowth
+  
+  #Constructing hypothesis
+  #Null-There is no difference in tooth length with respect to the dose levels of vitamin C.
+  #Alternative- An increase in dose level will cause an increase in teeth length.
+  
+  #Running the anova test
+  len_teeth <- aov(len ~ supp, data =filter(Tooth,dose %in% c(0.5, 1, 2))) 
+  summary(len_teeth)
 
+#7.4.3
+oranges<-datasets::Orange
 
-#Running the anova test
-len_teeth <- aov(len ~ dose, data = teeth) 
-summary(len_teeth)
+oranges$Tree=as.factor(oranges$Tree)
+#Null HYp-Age does not determine growth of the tree circumference
+#Alt Hyp- Age determines growth of the tree ciicumference.
 
-TukeyHSD(len_teeth)
+oranges.aov1 <- aov(age~circumference, data=filter(oranges, Tree %in% c(1,2,3,4,5)))
+summary(oranges.aov1)
 
-#Visualising the teeth data.
-ggplot(data = teeth, aes(x = dose, y = len)) + 
-  geom_boxplot(aes(fill = dose, aes(group=supp)), alpha = 0.6, show.legend = F) + 
-  geom_jitter(width = 0.05)
-
-
-
+#pvalue for all masses >0.05, therefore we reject null hyp and feed type has an effect on pig mass.
 
 # CHAPTER 9- 9.6.1: Producing a heat map 
 # Load libraries 
