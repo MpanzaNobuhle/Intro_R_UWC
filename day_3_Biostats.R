@@ -86,6 +86,10 @@ corrplot(ecklonia_pearson, method = "circle")
 #load library ggplot
 library(ggplot2)
 
+# Script complete and runs
+# Its good to practice other things in class as well and not just copy from the book
+# Good comments
+
 
 
                                                                                        

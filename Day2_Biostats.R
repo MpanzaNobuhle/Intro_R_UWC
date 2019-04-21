@@ -61,3 +61,8 @@ plot(density(y), main = "Density estimate of data")
     z.norm <- (y - mean(y)) / sd(y))
      qqnorm(z.norm) main = "Empirical cumulative distribution function"))
    abline(0, 1)
+
+   # Lack of comments throughout the script
+   # neat script
+   # Some parts dont run
+   

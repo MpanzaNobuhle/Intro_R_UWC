@@ -2,6 +2,8 @@
 #Due Friday 19 April 2019
 #Nobuhle Mpanza 3951932
 
+# It is always good to add some infomation about the scripts here [A.A]
+
 #Loading libraries
 library(tidyverse)
 library(ggpubr)
@@ -164,5 +166,10 @@ shapiro.test(x) #check normality of the data
 dnorm(-1.96) #dnorm generates density probability
 x <- seq(0, 4, 0.1)
 plot(x, dnorm(x, 2, 0.5), type = "l") #plotting density prop curve.
+
+
+# Nicely done
+# Good to explore and do different things
+# Well done
 
 

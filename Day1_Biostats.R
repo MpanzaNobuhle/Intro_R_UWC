@@ -321,3 +321,9 @@ iris.long %>% group_by(Species, variable) %>% #by species plot for each
   theme(axis.text.x = element_text(face = "italic"))
 
 #Violin plots-shows frequency distribution. 
+
+
+# Neat script
+# Script runs
+# good comments
+# Dont simply just copy from the book but try new things
