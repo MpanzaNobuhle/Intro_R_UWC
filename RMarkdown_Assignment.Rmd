@@ -1,0 +1,177 @@
+---
+title: "Carbon dioxide uptake by _Echinochloa crusgalli_ grass plants in Quebec and Mississippi"
+author: "Nobuhle Mpanza 3951932,
+Department of Biodiversity and Conservation Biology
+University of the Western Cape, Private Bag X17,
+Bellville, 7535, South Africa."
+date: "13 May 2019"
+output: word_document
+---
+
+## **Abstract** 
+**_Echinochloa crusgalli_ is a C4 grass plant that is commonly known as barnyard grass with native origin from to Europe and Asia. Plants used were collected at Quebec and Mississippi for carbon dioxide uptake analysis in relation to two temperature treatments (chilled and non-chilled) as well as looking at the ambient carbon dioxide concentrations. Half of the samples at both sites were exposed to chilling overnight before the experiment was conducted. Uptake of carbon dioxide was found to be significantly greater in a non-chilled treatment than in a chilled treatment _(t = 3.0485, p=0.0015)_ and also at the two sites _(t = 6.5969, p =1.917)_. Chilling treatment led to the reduction in carbon dioxide uptake by all grass plants in both sites. Non-chilled plants displayed the highest carbon dioxide uptake in both Quebec and Mississippi. There was an overall pronounced CO2 uptake in Quebec than in Mississippi. Ambient CO2 caused an elevated CO2 uptake at levels lower than 400 mL/L while above this level the uptake by all plants remained almost constant with slight carbon dioxide uptake increase. It was concluded that treatment (chilled and non-chilled) has an effect on CO2 uptake while ambient CO2 seemed to play a role only at low concentrations.**
+
+#### Keywords: Barnyard grass, temperature, photosynthesis, C4 plants, ambient CO-2.
+
+## **Introduction** 
+
+**_Echinochloa crusgalli_ is a C4 weed native to Europe and Asia with a wide range of distribution across the globe (Odintsova et al., 2008; Potvin 1986). This grass species is commonly known as barnyard grass and occurs frequently with large densities in irrigated rice fields (Matzenbacher et al., 2015). In Brazil, it was found to be the main weed in rice crop fields (Kennedy, et al., 1983; Matzenbacher et al., 2015). _Echinochloa crusgalli_ is also known for its ability to grow well and germinate in oxygen poor environments for extended periods of time (Kennedy et al., 1983). It is an annual, robust grass plant with fibrous roots that reproduces mainly by self-pollination (Maun and Barrett 1986; Potvin 1986). There have been extensive studies done on the _Echinochloa crusgalli_ grass which forms part of the type of C4 species that have the ability of growing at latitudes higher than 45◦C in North America (Potvin et al., 1984). Various studies have shown that low temperature induces a reduction of photosynthesis and translocation in several C4 grass species including _E. crusgalli_ grass (Potvin et al., 1984). Based on Potvin (1986) the physiology studies of C4 plants have been focused on their responses to hot, dry environments. However, some C4 species have been shown to function well at low temperatures. One of the possible explanations for this is that C4 plants from cool environments may not be fully tolerant of low temperatures but may instead have life histories enabling them to avoid those condition (Potvin et al., 1984).**
+
+
+**Within agricultural systems C4 species are important as both food crops such as maize and sorghum but can be also noxious weeds (Odintsova et al., 2008). These C4 plants significantly contribute to the global primary productivity due to their high productivity in grasslands (Vodnik et al., 2002). Furthermore, the negative effects caused by barnyard grass growing in crop fields include reduced grain yield, decreased harvesting efficiency and increase production costs. The barnyard grass removes 80% of soil nitrogen and by so doing reduces the crop yield. Furthermore, the accumulated nitrates within this grass species are toxic to livestock, leading to death (Odintsova et al., 2008). The positive impacts are that they have important usage such as that the hay made from this grass can be kept for several years and it is also an important folk remedy to cure infections in some parts of the world such as India (Odintsova et al., 2008).**
+
+
+**The aim of this study was to determine the effect of temperature (chilled and non-chilled) on the uptake of carbon dioxide by -Echinochloa crusgalli_ grass plants in Quebec and Mississippi with different ambient carbon dioxide concentrations. The objective was to determine the effect of temperature treatments (chilled and non-chilled) on the uptake of CO2 at two sites. There are two null hypothesises tested. The first one was that there is no difference in carbon dioxide uptake by grass plants in Quebec and Mississippi sites. The second hypothesis was that temperature treatment (chilled or non-chilled) has no effect on the uptake of carbon dioxide by grass plants.**
+
+
+
+## Materials and Methods
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(ggpubr)
+library(RColorBrewer)
+library(ggthemes)
+library(fitdistrplus)
+library(plotly)
+library(scales)
+library(ggsn)
+library(ggmap)
+library(e1071)
+library(dplyr)
+library(lattice)
+grass_tolerance <- datasets::CO2 
+
+```
+### Study area
+
+
+**Seeds of _E. crusgalli_ were collected in eastern North America at two sites namely; Quebec and Mississippi. The seeds were planted as soon as the weather permitted in two glass houses. Ambient carbon dioxide was controlled 24 hrs/day -1 by a WMA2 infra-red gas analyser (PP systems, Haverhill, MA) for each glass house. A total of 84 seeds per site were sown in plastic boxes (60 x 30 cm) previously filled with soil from the gardens of which the seeds were collected. All boxes were rotated weekly to minimize micro-climate effects within the glass houses and were watered daily. Once the plants had grown after a period of 6 weeks, a total of 84 plants were collected for both sites (from each glass house representing each site). Each site had a total of 42 grass plants collected.** 
+
+
+```{r}
+ggplot() +
+  borders() +  
+  coord_equal() 
+```
+
+**Figure 1: World map showing the two sites, Mississippi (red) and Quebec (black) where the study was conducted.**
+
+### Experimental procedure 
+
+**Once in the laboratory, plants from both sites were assigned an identifier based on site as well as whether they were chilled or non-chilled. The identifier codes were as follows: Qn for Quebec non-chilled and Qc for Quebec chilled, Mn for Mississippi non-chilled and Mc for Mississippi chilled. From the total of 42 plants from Quebec, 21 of them were chilled (7°C) overnight before the experiment was conducted while half remained non-chilled (26°C). The same procedure was done for the Mississippi site. From each of the two sites, the ambient carbon dioxide concentration (mL/L) was measured using a 21x data logger in both glass houses at 30 second time intervals. Then for both treatments (chilled and non-chilled) the carbon dioxide uptake (umol/m-2 sec) by the grass plants was measured using a CO2 Infrared gas analyser.**
+
+
+### Statistical analysis
+
+
+**Analysis on the data was conducted using R-Statistica. The test used was two sample t-test. In order to run the test, the following assumptions were first tested: The first assumption was that the dependent variable must be continuous. The second assumption was that the observations in the groups being compared are independent of each other. The above two assumptions were assumed to be have been met because the measurements of carbon dioxide uptake were taken from two independent sites. The third assumption was that the data are normally distributed, and this was tested using the Shapiro-Wilk test and a p-value of 0.0007908 was found leading to accepting that the data are normally distributed. The last assumption was that the data are homoscedastic (similar variance) was also tested and the data was found to be homoscedastic as the variance of one was no more than two to four times greater than the other.**
+
+## Results
+```{r}
+grass_tolerance %>% 
+  group_by(Type) %>% 
+  summarise(avr_uptake =mean(uptake), 
+            min_uptake =min(uptake), 
+            max_uptake =max(uptake),
+            sd_uptake = sd(uptake))
+```
+            
+            
+**Table 1 above shows that the highest uptake of carbon dioxide was at the Quebec site (45.5 umol/m-2 sec) with the lowest uptake at Mississippi (35.5 umol/m-2 sec). On average 33.5±9.67 umol/m-2 sec carbon dioxide was taken in by plants in Quebec than in Mississippi (20.9±7.82 umol/m-2 sec).**
+
+```{r}
+t.test(uptake~ Treatment, data = grass_tolerance, var.equal = TRUE,
+       alternative = "greater")
+```
+       
+```{r}
+t.test(uptake~ Type, data = grass_tolerance, var.equal = TRUE,
+       alternative = "greater")
+```
+       
+  
+**Table 2: T–test results for the carbon dioxide uptake in a chilled and non-chilled treatment in Quebec and Mississippi sites.**
+
+**Uptake of carbon dioxide was found to be significantly greater in a non-chilled treatment than in a chilled treatment (p = 0.0015, t = 3.0485, df =82) while when looking at each site it was also found to be significant different (, p =1.917, t = 6.5969, df = 82) (Table 2).**
+```{r}
+ ggplot(grass_tolerance, aes(Treatment, Type)) + 
+  geom_raster(aes(fill = uptake))+
+  labs(x = "Treament", y = "Site")+
+  scale_fill_continuous(name = "uptake")+
+  scale_fill_gradient(low = "#55E7F2", high = "#288A84",
+                      space = "Lab", na.value = "grey50", guide = "colourbar",
+                      aesthetics = "fill")
+```
+                    
+                      
+**Figure 2: Heat map depicting the levels of carbon dioxide uptake in two different treatments (chilled and non-chilled) at Mississippi and Quebec.**
+
+**The darker portions of the graph indicate the highest carbon dioxide uptake and the lighter portions indicate the lowest carbon dioxide uptake by the grass plants. Carbon dioxide uptake was found to be highest (darker green) in Quebec (non-chilled) than in Quebec (chilled) treatment. The same pattern was observed in Mississippi in which uptake was higher in non-chilled treatment than it was in a chilled treatment. The site with the overall highest carbon dioxide uptake in both a chilled and non-chilled treatment was the Quebec site (Figure 2).**
+
+```{r}
+ ggplot(data = grass_tolerance, aes(x = Type, y = uptake)) +
+  geom_boxplot(aes(fill = Treatment)) + 
+  labs(x = "Site", y = " CO2 Uptake (umol/m-2 sec)")
+```
+
+  
+  
+  
+ 
+ 
+**Figure 3: Carbon dioxide uptake (umol/m-2 sec) in a chilled and non-chilled treatment at Mississippi and Quebec sites.**
+
+**In both sites (Quebec and Mississippi) non-chilled treatment showed higher carbon dioxide uptake by grass plants than the chilled treatment. Site Quebec showed the overall highest carbon dioxide uptake in both treatments with three outliers in non-chilled and one outlier in chilled treatment (Figure 3).**
+```{r}
+xyplot(uptake~conc|Type,groups=Treatment, auto.key=TRUE,type=c("p","smooth"),data=grass_tolerance,xlab="ambient CO2 (mL/L )",ylab=" CO2 Uptake (umol^2/sec)")
+```
+
+
+  **Figure 4: The CO2 uptake (umol/m-2 sec) at Quebec and Mississippi as determined by ambient CO2 (mL/L) in a chilled and non-chilled treatment.**
+  
+**CO2 uptake (umol/m-2 sec) increased with an increase in ambient carbon dioxide concentration but reached a constant level above 400 mL/L of ambient CO2. The CO2 uptake was highest in Quebec site for both chilled and non-chilled treatments when compared to Mississippi site. In both sites non-chilled treatments had the highest CO2 uptake (Figure 4).** 
+```{r}
+ coplot(uptake ~ conc | Plant, data = grass_tolerance, show.given = TRUE, type = "b")
+```
+
+
+   
+         
+**Figure 5: Carbon dioxide uptake (umol/m-2 sec) by each plant (replicated) in relation to the ambient carbon dioxide (mL/L) in both treatments. Qn =Quebec non-chilled, Qc=Quebec chilled, Mn=Mississippi non-chilled and Mc= Mississippi chilled.**
+
+
+**An increase in ambient CO2 at all sites caused an increase in CO2 uptake by all grass plants. Qn plant (Quebec non-chilled replicate 1, 2 and 3) showed an overall highest CO2 uptake as with an increase in ambient CO2. All plants (Qn 1, 2, 3; Qc 1, 2, 3; Mn 1,2, 3 and Mc 1, 2, 3) showed an increase in the uptake of carbon dioxide (umol/m-2 sec) from 0 to 400 mL/L ambient CO2 and above 400 mL/L the uptake of carbon dioxide remained constant in all grass plant replicates. The least uptake in all plants was by plant Qc2 (Quebec chilled replicate 2). In Mississippi, only Mn3 (Mississippi non-chilled replicate 3) displayed the greatest CO2 with overall highest uptake in Mn (Mississippi non-chilled) than Mc (Mississippi chilled) plants (Figure 5).**
+
+## Discussion
+
+**The major findings for the current study were that plants in a non-chilled/warmer environment absorb more carbon dioxide in both sites when compared to plants in chilled (low temperature) environments (p = 0.0015, t = 3.0485) (Table 2). Results further showed that in overall the Quebec site had the greatest carbon dioxide uptake than the Mississippi site (p = 1.917, t = 6.5969) (Table 1). These results led to the rejection of both hypotheses stated beforehand that there is no difference in the CO2 uptake at both sites and that treatment has no effect on CO2 uptake. Further results showed that there is a positive correlation between the ambient carbon dioxide and the amount of carbon dioxide taken in by the plants in both sites (Figure 4), this is in support of the results found in a study by Vodnik et al., (2002) where they found that C4 plants respond positively to elevated atmospheric carbon dioxide making them take in more carbon dioxide. But in the present study, there was a cut off limit in CO2 uptake in relation to ambient CO2 which differs from Vodnik’s study results.**
+
+**Based on Maun and Barret (1986) E. crusgalli is a weed of warm regions. The increase in CO2 uptake of E. crusgalli is directly related to an increase in temperature. During spring time when temperatures are low, the growth is slow but the plants grow very rapidly during summer time. This supports the results of the current study as it found that when E. crusgalli plants are exposed to non-chilled (warmer) treatment they tend to be more active in consuming carbon dioxide than when they are exposed to a chilled (colder) treatment (Figure 3 & 4). Current results further showed that more CO2 uptake occurred in Quebec and this could be explained as being due to Quebec being a warmer environment than Mississippi (Potvin 1986).**
+
+**Increase in atmospheric carbon dioxide should stimulate net photosynthesis in C4 plants by elevating the carbon dioxide concentration gradient from the ambient environment to the leaf interior as well as by decreasing the loss of carbon dioxide via photorespiration. This explains the positive relationship in CO2 uptake and ambient CO2 observed in the present study (Figure 4 & 5). Furthermore, plants with the C4 photosynthetic pathway have an internal biochemical pump for concentrating carbon dioxide at the carboxylation site which functions to eliminate the oxygenase component of Rubisco, thereby eliminating photorespiratory carbon loss (Potvin et al., 1984). Although C4 species may not be directly stimulated by higher CO2 levels, they can still show a significant stimulation of photosynthesis as the ambient carbon dioxide increases. This is because increasing carbon dioxide results in stomatal closure. C4 plants, possessing an internal ‘CO2 pump’ have the ability to concentrate CO2 at the site of carboxylation with a subsequent decrease in the oxygenation of RuBP and loss of photorespiratory carbon dioxide. Therefore, increasing the ambient carbon dioxide concentration should have little effect on net photosynthesis in C4 plant (Ziska and Bunce 1997).**
+
+## Conclusion
+
+**Although C4 plants seem to have a direct response to increasing CO2 levels, the exact mechanism is unclear. Therefore, future studies should look into the mechanism involved in the relation between carbon dioxide uptake by plants and ambient carbon dioxide. Additional work is also needed to determine the role of soil type and nutrition in inﬂuencing carbon dioxide uptake by E. crusgalli. It can be concluded that temperature (chilled or non-chilled) has an effect on the uptake of carbon dioxide by E. crusgalli grass plants and this CO2 uptake differs between Quebec and Mississippi.**
+
+
+
+## References
+
+**Kennedy, R.A., Rumpho, M.E. and Vanderzee, D., 1983. Germination of Echinochloa crus-galli (barnyard grass) seeds under anaerobic conditions: Respiration and response to metabolic inhibitors. Plant Physiology, 72(3), pp.787-794.**
+
+**Matzenbacher, F.D.O., Kalsing, A., Dalazen, G., Markus, C. and Merotto Jr, A., 2015. Antagonism is the predominant effect of herbicide mixtures used for imidazolinone-resistant barnyard grass (Echinochloa crus-galli) control. Planta Daninha, 33(3), pp.587-597.**
+
+**Maun, M.A. and Barrett, S.C.H., 1986. THE BIOLOGY OF CANADIAN WEEDS.: 77. Echinochloa crus-galli (L.) Beauv. Canadian Journal of Plant Science, 66(3), pp.739-759.**
+
+**Odintsova, T.I., Rogozhin, E.A., Baranov, Y., Musolyamov, A.K., Yalpani, N., Egorov, T.A. and Grishin, E.V., 2008. Seed defensins of barnyard grass Echinochloa crusgalli (L.) Beauv. Biochimie, 90(11-12), pp.1667-1673.**
+
+**Potvin, C., 1986. Biomass allocation and phenological differences among southern and northern populations of the C4 grass Echinochloa crus-galli. The Journal of Ecology, pp.915-923.**
+
+**Potvin, C., Goeschl, J.D. and Strain, B.R., 1984. Effects of temperature and CO2 enrichment on carbon translocation of plants of the C4 grass species Echinochloa crus-galli (L.) Beauv. from cool and warm environments. Plant physiology, 75(4), pp.1054-1057.**
+
+**Vodnik, D., Pfanz, H., Maček, I., Kastelec, D., Lojen, S. and Batič, F., 2002. Photosynthesis of cockspur [Echinochloa crus-galli (L.) Beauv.] at sites of naturally elevated CO 2 concentration. Photosynthetica, 40(4), pp.575-579.**
+
+**Ziska, L.H. and Bunce, J.A., 1997. Influence of increasing carbon dioxide concentration on the photosynthetic and growth stimulation of selected C 4 crops and weeds. Photosynthesis Research, 54(3), pp.199-208.**
+
